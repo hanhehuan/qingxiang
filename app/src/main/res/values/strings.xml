@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">qingxiang</string>
+    <string name="hello">你好，欢迎！</string>
+    <string name="img_dis_splash">这是一个描述</string>
+</resources>
