@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         register = findViewById(R.id.register);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-        login.setOnClickListener(this);
+        login.setOnClickListener(this);//
         register.setOnClickListener(this);
 
         if(BmobUser.isLogin()){
