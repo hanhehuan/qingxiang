@@ -63,19 +63,26 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 user.setNickname(nick);
                 user.setUsername(name);
                 user.setPassword(pass);
-                user.signUp(new SaveListener<User>() {
-                    @Override
-                    public void done(User user, BmobException e) {
-                        if(e == null){
-                            Toast.makeText(Register.this,"注册成功",Toast.LENGTH_SHORT).show();
-                            finish();
-                        }else {
+                if(name.equals("")){
+                    Toast.makeText(this,"请输入用户名！",Toast.LENGTH_SHORT).show();
+                }else if(pass.equals("")){
+                    Toast.makeText(this,"请输入密码！",Toast.LENGTH_SHORT).show();
+                }else {
+                    user.signUp(new SaveListener<User>() {
+                        @Override
+                        public void done(User user, BmobException e) {
+                            if(e == null){
+                                Toast.makeText(Register.this,"注册成功",Toast.LENGTH_SHORT).show();
+                                finish();
+                            }else {
 
-                            Toast.makeText(Register.this,"注册错误，错误码："+e.getErrorCode()+"："+e.getMessage(),Toast.LENGTH_LONG)
-                                    .show();
+                                Toast.makeText(Register.this,"注册错误，错误码："+e.getErrorCode()+"："+e.getMessage(),Toast.LENGTH_LONG)
+                                        .show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
 
                 break;
         }

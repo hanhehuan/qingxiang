@@ -35,4 +35,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     //Bmob结束
 
+    implementation ('com.ashokvarma.android:bottom-navigation-bar:2.2.0'){
+            exclude group :"com.android.support"
+    }
+
 }
