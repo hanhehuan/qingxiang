@@ -10,9 +10,11 @@ package com.example.qingxiang.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.qingxiang.MainActivity;
 import com.example.qingxiang.R;
+import com.example.qingxiang.util.StaticUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,7 +30,7 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Bmob.initialize(this,"6ba4f479d1de89e19cb7702a32eebd96");
+        //Bmob.initialize(this, StaticUtils.BMOB_KEY);
 
         Timer timer = new Timer();
         timer.schedule(timetask,2000);
