@@ -18,7 +18,7 @@ import java.io.File;
 
 import androidx.core.content.ContextCompat;
 
-public class StatsUtils {
+public class SDCardUtils {
 //在SDCard中创建与删除文件权限
     //往SDCard写入数据权限
     /*private static final String[] mPermissions = {
