@@ -20,7 +20,7 @@ public class ShareUtils {
         editor.putString("key","value");
         editor.commit();
     }*/
-    public static final String NAME = "config";
+    public static final String NAME = "qingxiang";
     //键 值
     public static void putString(Context mContext,String key,String value){
         SharedPreferences sp = mContext.getSharedPreferences(NAME,Context.MODE_PRIVATE);
