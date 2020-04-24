@@ -19,12 +19,6 @@ import java.io.File;
 import androidx.core.content.ContextCompat;
 
 public class SDCardUtils {
-//在SDCard中创建与删除文件权限
-    //往SDCard写入数据权限
-    /*private static final String[] mPermissions = {
-            Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-    };*/
 
     /**
      * 判断有没有sd卡
