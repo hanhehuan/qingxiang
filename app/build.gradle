@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.qingxiang"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -17,6 +17,11 @@ android {
         }
     }
     useLibrary 'org.apache.http.legacy'
+    compileOptions {
+        targetCompatibility = 1.8
+        sourceCompatibility = 1.8
+    }
+    buildToolsVersion = '29.0.2'
 }
 
 dependencies {
@@ -38,5 +43,10 @@ dependencies {
     implementation ('com.ashokvarma.android:bottom-navigation-bar:2.2.0'){
             exclude group :"com.android.support"
     }
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 }
