@@ -16,11 +16,13 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.qingxiang.Adapter.HomeAdapter;
 import com.example.qingxiang.R;
 import com.example.qingxiang.entity.Post;
+import com.example.qingxiang.entity.User;
 import com.example.qingxiang.util.ToastUtils;
 
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
@@ -30,6 +32,7 @@ public class FragmentHome extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private TextView HelloHome;
     private List<Post> datas;
+    private TextView username,ok;
 
     private HomeAdapter homeAdapter;
 
@@ -59,6 +62,11 @@ public class FragmentHome extends Fragment {
                 Refresh();//刷新
             }
         });
+
+        BmobUser bu = BmobUser.getCurrentUser(User.class);
+        String userid = bu.getObjectId();
+        BmobQuery<User> userBmobQuery = new BmobQuery<>();
+
     }
     //刷新
     private void Refresh() {
@@ -91,7 +99,8 @@ public class FragmentHome extends Fragment {
         rv = getActivity().findViewById(R.id.recyclerview);
         swipeRefreshLayout = getActivity().findViewById(R.id.swipe);
         HelloHome = getActivity().findViewById(R.id.HelloHome);
-
+        username = getActivity().findViewById(R.id.user);
+        ok = getActivity().findViewById(R.id.hy);
 
 
     }

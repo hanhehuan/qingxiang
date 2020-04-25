@@ -68,6 +68,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }else {
             final  RecyclerViewHolder recyclerViewHolder = (RecyclerViewHolder) holder;
             Post post = datas.get(position);
+            recyclerViewHolder.username.setText(post.getName());
             recyclerViewHolder.nickname.setText(post.getNickname());
             recyclerViewHolder.content.setText(post.getContent());
             recyclerViewHolder.time.setText(post.getCreatedAt());
@@ -112,7 +113,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView nickname,content,time;
+        public TextView username,nickname,content,time;
         public TextView loading;
 
 
@@ -120,6 +121,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemview);
 
             if(type == N_TYPE){
+                username = itemview.findViewById(R.id.username);
                 nickname = itemview.findViewById(R.id.nickname);
                 content = itemview.findViewById(R.id.content);
                 time = itemview.findViewById(R.id.time);
