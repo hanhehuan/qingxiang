@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.widget.TextView;
+
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -13,15 +13,10 @@ import com.example.qingxiang.Adapter.SectionsPagerAdapter;
 import com.example.qingxiang.Fragment.FragmentChat;
 import com.example.qingxiang.Fragment.FragmentHome;
 import com.example.qingxiang.Fragment.FragmentMine;
-import com.example.qingxiang.entity.User;
+
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.QueryListener;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener, ViewPager.OnPageChangeListener {
     private ViewPager viewPager;

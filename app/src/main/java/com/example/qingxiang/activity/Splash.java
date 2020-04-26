@@ -10,18 +10,18 @@ package com.example.qingxiang.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
-import com.example.qingxiang.MainActivity;
+
+
 import com.example.qingxiang.R;
-import com.example.qingxiang.util.StaticUtils;
+
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import cn.bmob.v3.Bmob;
+
 
 public class Splash extends AppCompatActivity {
 

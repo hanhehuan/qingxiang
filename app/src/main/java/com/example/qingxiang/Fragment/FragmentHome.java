@@ -25,6 +25,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
+import cn.bmob.v3.listener.QueryListener;
 
 public class FragmentHome extends Fragment {
 
@@ -66,6 +67,16 @@ public class FragmentHome extends Fragment {
         BmobUser bu = BmobUser.getCurrentUser(User.class);
         String userid = bu.getObjectId();
         BmobQuery<User> userBmobQuery = new BmobQuery<>();
+        userBmobQuery.getObject(userid, new QueryListener<User>() {
+            @Override
+            public void done(User user, BmobException e) {
+                if(e==null){
+                    username.setText(user.getNickname());
+                }else {
+                    //ToastUtils.showShort(getActivity(),"查询用户失败");
+                }
+            }
+        });
 
     }
     //刷新
@@ -87,6 +98,7 @@ public class FragmentHome extends Fragment {
 
 
                 }else {
+                    //ToastUtils.showLong(getActivity(),e.getMessage());
                     ToastUtils.showShort(getActivity(),"获取数据失败");
                 }
             }

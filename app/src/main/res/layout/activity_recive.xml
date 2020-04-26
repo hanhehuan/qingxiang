@@ -12,14 +12,14 @@
         android:layout_height="?attr/actionBarSize">
 
         <ImageView
-            android:src="@drawable/abc_vector_test"
+            android:src="@drawable/back"
             android:id="@+id/back"
             android:background="?android:attr/selectableItemBackground"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:paddingStart="15dp"
+            android:paddingLeft="15dp"
             android:textSize="20sp"
             android:textColor="#000"
             android:id="@+id/rec"
@@ -76,5 +76,27 @@
     </LinearLayout>
 
     </LinearLayout>
+    <FrameLayout
+        android:id="@+id/frame_sx"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/sx_txt"
+            android:text="获取失败请重新获取"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <Button
+            android:id="@+id/sx"
+            android:text="刷新"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Button>
+    </FrameLayout>
 
 </LinearLayout>

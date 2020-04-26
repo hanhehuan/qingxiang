@@ -72,7 +72,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             recyclerViewHolder.nickname.setText(post.getNickname());
             recyclerViewHolder.content.setText(post.getContent());
             recyclerViewHolder.time.setText(post.getCreatedAt());
-
+            ToastUtils.showShort(context,post.getObjectId());
             recyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
