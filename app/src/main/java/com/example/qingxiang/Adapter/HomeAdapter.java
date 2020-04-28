@@ -21,16 +21,19 @@ import java.util.List;
 
 import cn.bmob.v3.BmobUser;
 
+/*
+* 首页数据适配器
+*/
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private List<Post> datas;
 
-    private final int N_TYPE = 0;
-    private final int F_TYPE = 1;
+    private final int N_TYPE = 0;//非footview的type
+    private final int F_TYPE = 1;//footview的type
 
-    private int MAX_NUM = 15;
+    private int MAX_NUM = 15; //预加载的数据，一共15条
 
-    private Boolean isfootview = true;//是否存view
+    private Boolean isfootview = true;//是否存在footview
 
 
     public HomeAdapter(Context context, List<Post> datas){

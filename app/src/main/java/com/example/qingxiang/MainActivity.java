@@ -18,6 +18,9 @@ import com.example.qingxiang.Fragment.FragmentMine;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 主页面
+ */
 public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener, ViewPager.OnPageChangeListener {
     private ViewPager viewPager;
     private BottomNavigationBar bottomNavigationBar;
@@ -72,10 +75,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         viewPager.setCurrentItem(0);
 
     }
-
+    //BottomNavigationBar
     @Override
     public void onTabSelected(int position) {
-
+            bottomNavigationBar.selectTab(position);
     }
 
     @Override
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     public void onTabReselected(int position) {
 
     }
-
+    //ViewPager
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -95,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     @Override
     public void onPageSelected(int position) {
-
+            viewPager.setCurrentItem(position);
     }
 
     @Override

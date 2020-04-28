@@ -5,9 +5,10 @@ package com.example.qingxiang.activity;
  * 文件名： Login
  * 创建者：hanhehuann
  * 创建时间：2020-04-16 10:06
- * 描述：TODO
+ * 描述：登录页面
  */
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,6 +22,9 @@ import com.example.qingxiang.MainActivity;
 import com.example.qingxiang.R;
 import com.example.qingxiang.entity.User;
 import com.example.qingxiang.util.ShareUtils;
+import com.example.qingxiang.util.ToastUtils;
+
+import java.lang.ref.WeakReference;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,14 +37,42 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private EditText username;
     private EditText password;
 
+    /*@SuppressLint("HandlerLeak")
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what){
+
             }
         }
-    };
+    };*/
+    private MyHandler myhandler = new MyHandler(this);
+    static class MyHandler extends Handler{
+        WeakReference<Activity> mActivityWeak;
+        MyHandler(Activity activity){
+            mActivityWeak = new WeakReference<>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            final Activity activity = mActivityWeak.get();
+            if(activity!=null){
+                switch (msg.what){
+                    case 0:
+                        ToastUtils.showShort(activity,"你好，我是0");
+                        break;
+                    case 1:
+                        ToastUtils.showShort(activity,"你好，我是1");
+                        break;
+                        default:
+                            break;
+                }
+            }
+        }
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +85,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         login.setOnClickListener(this);//
         register.setOnClickListener(this);
 
-        if(BmobUser.isLogin()){
-            User user = BmobUser.getCurrentUser(User.class);
+        if(BmobUser.isLogin()){//如果已经登录，直接跳到主页面
             startActivity(new Intent(Login.this, MainActivity.class));
         }
     }
@@ -77,7 +108,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void loginClass(String name, String pass) {
-
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myhandler.sendEmptyMessage(0);
+            }
+        }).start();
         User user = new User();
         user.setUsername(name);
         user.setPassword(pass);

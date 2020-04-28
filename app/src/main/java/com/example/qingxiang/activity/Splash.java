@@ -5,7 +5,7 @@ package com.example.qingxiang.activity;
  * 文件名： Splash
  * 创建者：hanhehuann
  * 创建时间：2020-04-16 8:50
- * 描述：TODO
+ * 描述：引导页
  */
 
 import android.content.Intent;

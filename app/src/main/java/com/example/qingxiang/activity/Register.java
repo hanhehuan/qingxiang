@@ -5,7 +5,7 @@ package com.example.qingxiang.activity;
  * 文件名： Register
  * 创建者：hanhehuann
  * 创建时间：2020-04-16 17:07
- * 描述：TODO
+ * 描述：注册页面
  */
 
 import android.content.Intent;

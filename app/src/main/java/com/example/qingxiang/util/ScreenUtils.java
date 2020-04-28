@@ -5,7 +5,7 @@ package com.example.qingxiang.util;
  * 文件名： ScreenUtils
  * 创建者：hanhehuann
  * 创建时间：2020-04-24 15:13
- * 描述：TODO
+ * 描述：获取屏幕宽度和高度的一些静态方法
  */
 
 import android.content.Context;

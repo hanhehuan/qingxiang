@@ -5,7 +5,7 @@ package com.example.qingxiang.application;
  * 文件名： MyApplication
  * 创建者：hanhehuann
  * 创建时间：2020-04-24 14:13
- * 描述：TODO
+ * 描述：自定义application启动类
  */
 
 import android.app.Application;

@@ -19,6 +19,9 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 
+/**
+ * 详情页面
+ */
 public class Recive extends AppCompatActivity implements View.OnClickListener {
 
     private TextView username,content,time;

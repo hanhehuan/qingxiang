@@ -5,7 +5,7 @@ package com.example.qingxiang.util;
  * 文件名： StatsUtils
  * 创建者：hanhehuann
  * 创建时间：2020-04-16 8:49
- * 描述：TODO
+ * 描述：sd卡的相关静态方法
  */
 
 import android.content.Context;

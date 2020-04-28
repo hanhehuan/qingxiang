@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+/**
+ * 论坛
+ */
 public class FragmentChat extends Fragment {
 
 

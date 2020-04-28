@@ -5,7 +5,7 @@ package com.example.qingxiang.util;
  * 文件名： StaticUtils
  * 创建者：hanhehuann
  * 创建时间：2020-04-24 13:56
- * 描述：TODO
+ * 描述：常量静态类
  */
 
 import android.Manifest;

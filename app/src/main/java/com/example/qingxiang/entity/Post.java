@@ -2,6 +2,9 @@ package com.example.qingxiang.entity;
 
 import cn.bmob.v3.BmobObject;
 
+/**
+ * 详情类
+ */
 public class Post extends BmobObject {
 
     private User author;//上传的对应用户

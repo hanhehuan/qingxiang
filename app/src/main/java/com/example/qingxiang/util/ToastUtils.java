@@ -5,7 +5,7 @@ package com.example.qingxiang.util;
  * 文件名： ToastUtils
  * 创建者：hanhehuann
  * 创建时间：2020-04-24 14:02
- * 描述：TODO
+ * 描述：吐司静态类
  */
 
 

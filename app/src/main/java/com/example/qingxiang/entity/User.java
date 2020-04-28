@@ -10,6 +10,9 @@ package com.example.qingxiang.entity;
 
 import cn.bmob.v3.BmobUser;
 
+/**
+ * 用户类
+ */
 public class User extends BmobUser {
 
     private String nickname;
