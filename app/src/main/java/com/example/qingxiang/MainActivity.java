@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     //BottomNavigationBar
     @Override
     public void onTabSelected(int position) {
-            bottomNavigationBar.selectTab(position);
+            viewPager.setCurrentItem(position);
     }
 
     @Override
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     @Override
     public void onPageSelected(int position) {
-            viewPager.setCurrentItem(position);
+            bottomNavigationBar.selectTab(position);
     }
 
     @Override
