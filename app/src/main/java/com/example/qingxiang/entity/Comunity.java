@@ -15,6 +15,15 @@ public class Comunity extends BmobObject {
     private User user;
     private String name;
     private String info;
+    private String owner;
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
 
     public User getUser() {
         return user;

@@ -1,16 +1,23 @@
 package com.example.qingxiang.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 
 import com.example.qingxiang.Adapter.ChatAdapter;
 import com.example.qingxiang.R;
+import com.example.qingxiang.activity.PushComunity;
+import com.example.qingxiang.activity.PushContent;
 import com.example.qingxiang.entity.Comunity;
 import com.example.qingxiang.entity.User;
 import com.example.qingxiang.util.ToastUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -35,6 +42,10 @@ public class FragmentChat extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout2;
     private List<Comunity> comunityList;
     private ChatAdapter chatAdapter;
+    private FloatingActionButton add,addcontent,addcomunity;
+    //private PopupWindow pop;
+    //private RelativeLayout rv_layout;
+    //private View pop_view;
 
     @Nullable
     @Override
@@ -45,7 +56,7 @@ public class FragmentChat extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        //pop_view = getLayoutInflater().inflate(R.layout.pop_item,null);
         initView();
         initData();
     }
@@ -57,6 +68,36 @@ public class FragmentChat extends Fragment {
             @Override
             public void onRefresh() {
                 Refresh2();//刷新
+            }
+        });
+
+        //发帖点击
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addcontent.setVisibility(addcontent.getVisibility()==View.VISIBLE?View.GONE:View.VISIBLE);
+                addcomunity.setVisibility(addcomunity.getVisibility()==View.VISIBLE?View.GONE:View.VISIBLE);
+                /*pop = new PopupWindow(pop_view,add.getWidth(),150,true);
+                pop.setOutsideTouchable(true);
+                pop.setFocusable(true);
+                pop.showAtLocation(rv_layout, Gravity.END,add.getScrollX(),add.getScrollY());*/
+
+            }
+        });
+
+        addcontent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showShort(getContext(),"点击了编辑按钮");
+                startActivity(new Intent(getActivity(), PushContent.class));
+            }
+        });
+
+        addcomunity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showShort(getContext(),"点击了发帖按钮");
+                startActivity(new Intent(getActivity(), PushComunity.class));
             }
         });
 
@@ -86,5 +127,9 @@ public class FragmentChat extends Fragment {
     private void initView(){
         rv2 = getActivity().findViewById(R.id.rv2);
         swipeRefreshLayout2 = getActivity().findViewById(R.id.swipe2);
+        add = getActivity().findViewById(R.id.fab);
+        addcontent = getActivity().findViewById(R.id.add_content);
+        addcomunity = getActivity().findViewById(R.id.add_comunity);
+        //rv_layout = getActivity().findViewById(R.id.rv_layout);
     }
 }

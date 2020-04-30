@@ -71,7 +71,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Comunity comunity = datas.get(position);
             recyclerViewHolder.c_name.setText(comunity.getName());
             recyclerViewHolder.c_info.setText(comunity.getInfo());
-            recyclerViewHolder.c_user.setText(comunity.getUser().getNickname());
+            recyclerViewHolder.c_user.setText(comunity.getOwner());
             ToastUtils.showShort(context,"nickname="+comunity.getUser().getNickname());
 
             recyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {

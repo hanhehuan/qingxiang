@@ -35,6 +35,8 @@
         <activity android:name=".activity.Login"></activity>
         <activity android:name=".activity.Register"></activity>
         <activity android:name=".activity.Recive" />
+        <activity android:name=".activity.PushContent" />
+        <activity android:name=".activity.PushComunity" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"

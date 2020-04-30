@@ -45,6 +45,7 @@
 
     </LinearLayout>
 <RelativeLayout
+    android:id="@+id/rv_layout"
     android:layout_weight="1"
     android:layout_width="match_parent"
     android:layout_height="0dp">
@@ -60,8 +61,34 @@
             android:layout_height="match_parent"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/add_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="190dp"
+        android:focusable="true"
+        android:visibility="gone"
+        android:src="@drawable/write" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_comunity"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="110dp"
+        android:focusable="true"
+        android:visibility="gone"
+        android:src="@drawable/addluntan" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentEnd="true"
