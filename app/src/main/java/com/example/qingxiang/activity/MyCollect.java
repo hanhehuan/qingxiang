@@ -1,0 +1,80 @@
+package com.example.qingxiang.activity;
+/*
+ * 项目名： qingxiang
+ * 包名： com.example.qingxiang.activity
+ * 文件名： MyCollect
+ * 创建者：hanhehuann
+ * 创建时间：2020-05-07 16:06
+ * 描述：TODO
+ */
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.example.qingxiang.Fragment.Fragment_Comunity;
+import com.example.qingxiang.Fragment.Fragment_Push;
+import com.example.qingxiang.R;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentStatePagerItemAdapter;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+
+public class MyCollect extends AppCompatActivity {
+
+    private SmartTabLayout smartTabLayout;
+    private ViewPager viewPager;
+
+    private ImageView back;
+
+    private FragmentStatePagerItemAdapter fragadapter;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mycollect);
+
+        initView();
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        viewPager.setOffscreenPageLimit(3);
+        initTab();
+
+    }
+
+    private void initTab() {
+
+        String[] tabs = new String[]{"帖子","论坛"};
+
+        FragmentPagerItems pages = new FragmentPagerItems(MyCollect.this);
+        for (int i = 0 ; i<tabs.length ; i++){
+            Bundle args = new Bundle();
+            args.putString("name",tabs[i]);
+        }
+
+        pages.add(FragmentPagerItem.of(tabs[0], Fragment_Push.class));
+        pages.add(FragmentPagerItem.of(tabs[1], Fragment_Comunity.class));
+
+        viewPager.removeAllViews();
+        fragadapter = new FragmentStatePagerItemAdapter(getSupportFragmentManager(),pages);
+        viewPager.setAdapter(fragadapter);
+        smartTabLayout.setViewPager(viewPager);
+
+    }
+
+    private void initView() {
+        smartTabLayout = findViewById(R.id.mycollecttab);
+        viewPager = findViewById(R.id.mycollectvp);
+        back = findViewById(R.id.back);
+    }
+}

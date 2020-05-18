@@ -9,4 +9,9 @@
     <color name="holo_green_light">#4CB350</color>
     <color name="holo_red_light">#C21111</color>
     <color name="holo_blue_light">#3752E6</color>
+    <color name="colorbk">#f2f2f2</color>
+    <color name="transparent">#00000000</color>
+    <color name="orange">#fdcd09</color>
+    <color name="color_app_themes">#0400f1</color>
+    <color name="color_e5">#e5e5e5</color>
 </resources>

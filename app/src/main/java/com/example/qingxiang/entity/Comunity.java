@@ -9,6 +9,7 @@ package com.example.qingxiang.entity;
  */
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobRelation;
 
 public class Comunity extends BmobObject {
 
@@ -16,6 +17,36 @@ public class Comunity extends BmobObject {
     private String name;
     private String info;
     private String owner;
+
+    private BmobRelation relation;
+
+    private String userOnlyId;
+
+    private String isrelated;  //标识值
+
+    public String getIsrelated() {
+        return isrelated;
+    }
+
+    public void setIsrelated(String isrelated) {
+        this.isrelated = isrelated;
+    }
+
+    public BmobRelation getRelation() {
+        return relation;
+    }
+
+    public void setRelation(BmobRelation relation) {
+        this.relation = relation;
+    }
+
+    public String getUserOnlyId() {
+        return userOnlyId;
+    }
+
+    public void setUserOnlyId(String userOnlyId) {
+        this.userOnlyId = userOnlyId;
+    }
 
     public String getOwner() {
         return owner;
